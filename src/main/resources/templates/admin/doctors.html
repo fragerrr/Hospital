@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{../static/css/admin.css}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Profile</title>
+</head>
+<body>
+
+        <div class="container">
+            <div class="navbarStyle">
+                <div class="navbarImg">
+                    <img th:src="@{../static/images/admin.jpg}" class="adminImg"/>
+                </div>
+                <span class="adminName" th:text="${admin.getName()}"></span>
+
+
+
+                <div class="navPages">
+                    <div class="pages">
+                        <a th:href="@{'/admin'}" class="navText" >Главная</a>
+                    </div>
+                    <div class="pages">
+                        <a th:href="@{'/admin/patients'}" class="navText" >Пациенты</a>
+                    </div>
+
+                    <div class="pages">
+                        <a th:href="@{'/admin/doctors'}" class="navText" >Доктора</a>
+                    </div>
+
+                    <div class="pages">
+                        <form th:action="@{/logout}" th:method="POST">
+                            <button style="border: none; background: none"><a class="navText" type="submit">Выйти</a></button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>  
+        
+            <div class="tableUsers">
+                <div class="titleBlock">
+                    <a class="title">Список докторов</a>
+                </div>
+                <table>
+                    <thead>
+                        <th>ID</th>
+                        <th>Имя</th>
+                        <th>Фамилия</th>
+                        <th>Пользовательский ID</th>
+                        <th>Удаление</th>
+
+                    </thead>
+                    <tbody>
+                        <th:block th:each="d : ${doctors}">
+                            <tr>
+
+                                <td th:text="${d.getId()}"></td>
+                                <td th:text="${d.getName()}"></td>
+                                <td th:text="${d.getSurname()}"></td>
+                                <td th:text="${d.getUser().getId()}"></td>
+                                <td><a th:href="@{'/admin/doctor/' + ${d.getId()} + '/delete'}" class="btn-delete">УДАЛИТЬ</a></td>
+
+                            </tr>
+                        </th:block>
+                    </tbody>
+
+
+                  </table>
+               </div>
+    </div>
+
+    
+</body>
+</html>

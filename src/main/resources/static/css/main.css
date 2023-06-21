@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500&family=Gothic+A1:wght@200;300;400;500;600&family=Kanit:wght@100;200;300;400&family=Sono:wght@200;300;400;500&display=swap');
+
+body {
+    background: rgb(102,74,133);
+background: linear-gradient(180deg, rgba(102,74,133,1) 33%, rgba(85,66,145,1) 100%);
+height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.bodyStyle{
+
+    height: 100vh;
+
+}
+
+/*---------- NavBar ----------*/
+.navbarStyle {
+    
+    color:white;
+    text-align:center;
+    display:flex;
+    width:100%;
+    height:40px;
+    background-color: #412e4f;
+
+    padding:20px 0;
+    opacity:0.98;
+    justify-content:space-between
+
+}
+
+.textStyle {
+    color: white;
+    text-decoration: none;
+    font-size:30px;
+    margin:0 20px;
+}
+
+.pages{
+
+    justify-content:space-around;
+    display: flex;
+    height: 40px;
+    margin: 0 10px;
+    width: 600px;
+
+}
+
+
+
+
+.container {
+    display:flex;
+}
+
+.pagesText {
+    font-size: 20px;
+    color:white;
+    text-decoration:none;
+    margin-top: 5px;
+    margin-right:15px;
+    letter-spacing:1.5px;
+    font-weight: bold;
+}
+
+/*--------------------------*/
+
+
+
+
+/*---------- Login ----------*/
+  
+  .btn {
+      margin-top: 2%;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    font-size: 20px;
+    background-color: #81589e;
+    color: white;
+    height: 60px;
+    width: 600px;
+  }
+  
+
+  
+  .btn:hover {
+    background-color: #5d337b;
+  }
+  
+.card {
+    border-radius: 10px;
+    margin-top: 100px;
+    height: 400px;
+    padding: 50px 60px;
+    padding-bottom: 100px;
+    background-color: #f2f2f2;
+    opacity: 1;
+    z-index: 2;
+}
+
+  .card-header {
+    
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .h2 {
+    color: #81589e;
+    margin: 0;
+    padding-bottom:60px ;
+  }
+  
+  .card-body {
+  
+    display: grid;
+    grid-gap: 30px;
+    color: #81589e;
+  }
+  
+  
+  
+  .loginText {
+      justify-content: center;
+      text-align: center;
+      letter-spacing: 2px;
+      font-size: 20px;
+      background-color: #ea3737;
+      color: white;
+      height: 45px;
+      width: 200px;
+  
+  
+      text-decoration:none;
+     padding-top: 15px;
+     margin-top: 20px;
+      letter-spacing:1.5px;
+  
+  }
+  
+  
+  
+  .div#container1 {
+    width: 100%;
+    height: 91vh;
+    justify-content: center;
+  
+    display: flex;
+    position: relative;
+  
+  }
+  
+  .form {
+    justify-content: center;
+    width: 100%;
+     position: absolute;
+     color: white;
+     display: grid;
+  
+     grid-gap: 10px;
+  
+     height:  91vh;
+     z-index: 1;
+     background: rgb(102,74,133);
+background: linear-gradient(180deg, rgba(102,74,133,1) 33%, rgba(85,66,145,1) 100%);
+     
+    opacity: 0.98;
+  
+  }
+  
+  
+  .form-control {
+    border-color: #81589e;
+    text-decoration: none;
+    all: unset;
+    color: #81589e;
+    border: 3px solid #a2a1a1;
+    height: 50px;
+    margin-top: 15px;
+    padding:0 10px ;
+  }
+  
+  
+  
+  .form-group{
+    display: grid;
+    grid-template-columns: 600px;
+  
+  }
+  
+
+  
+  /*---------- Parient Page ----------*/
+
+.img {
+    margin: 100px 0 100px 100px;
+    width: 300px;
+    height: 250px;
+
+    
+    text-align: center;
+    padding-top: 60px;
+
+}
+
+.imgAvatar {
+    width: 200px;
+    height: 200px;
+}
+
+.line {
+    margin-top: 100px;
+    width: 5px;
+    height: 350px;
+    background-color: #ffffff;
+}
+
+.patientPage {
+    max-width: 1600px;
+    display: flex;
+}
+
+.patientContainer{
+   
+
+    width: 100%;
+    
+    justify-content: center;
+    display: flex;
+}
+
+.patient {      
+   
+    margin: 50px 0;
+    display: flex;
+    width: 800px;
+   
+    height: 300px;
+    
+    letter-spacing: 2px;
+    
+}
+
+.patientText {
+    font-size: 12px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 200;
+    color: white;
+
+}
+
+.patientText1{
+    color: wheat;
+    margin: 0;
+    font-size: 30px;
+    
+}
+
+
+.history {
+    border: 5px #282c34 solid;
+    text-align: center;
+    background-color: #f2f2f2;
+    margin: 0 200px;
+    width: 1400px;
+   
+}
+
+.historyTitle {
+    font-family: 'Barlow', sans-serif;
+    
+}
+
+.historyText {
+    padding: 20px 100px;
+
+    max-width: 1200px;
+}
+
+/*--------------------------------*/
+
+
+
+
+
+
+/*---------- Tables ----------*/
+
+table {
+    display: flex;
+    justify-content: space-between;
+   
+    margin-right: 100px;
+   
+    border-left: none;
+
+    border-collapse: collapse;
+    width: 1000px;
+    height: 200px;
+
+}
+
+.divTable {
+    margin-top: 80px;
+    
+    width: 400px;
+    height: 40px;
+    padding-left: 100px;
+}
+
+
+/*---------- Contact Page ----------*/
+  
+.contact {
+    
+    margin: 50px 50px;
+   
+    width: 800px;
+    height: 600px;
+    font-size: 30px;
+}
+
+.contactInner {
+    color: #ffffff;
+
+    padding: 50px;
+}
+
+
+/*---------- Main Page ----------*/
+
+
+
+.mainPage {
+    margin: 200px 100px;
+}
+
+.mainTitle{
+    font-family: 'Barlow', sans-serif;
+    font-size: 40px;
+}
+
+.mainText {
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+}
+
+ .form1 {
+   text-align: center;
+    width: 100%;
+     position: absolute;
+     color: white;
+     display: grid;
+  
+     grid-gap: 10px;
+  
+     height:  91vh;
+     z-index: 1;
+     background: rgb(102,74,133);
+background: linear-gradient(180deg, rgba(102,74,133,1) 33%, rgba(85,66,145,1) 100%);
+     
+    opacity: 0.90;
+  
+  }
+
+
+.aboutText {
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    color: white;
+    margin: 100px 300px 100px 100px;
+}

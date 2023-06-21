@@ -1,0 +1,477 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500&family=Gothic+A1:wght@200;300;400;500;600&family=Kanit:wght@100;200;300;400&family=Sono:wght@200;300;400;500&display=swap');
+
+
+
+
+
+
+
+/*-----Forms------*/
+
+.forms{
+  
+    display: flex;
+    flex-wrap: wrap;
+    margin-left:350px;
+    
+}
+
+.addForm {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    margin-top: 40px;
+    margin-left: 50px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.686);
+    width: 500px;
+    height: 380px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.addForm1 {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    margin-top: 40px;
+    margin-left: 50px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.686);
+    width: 500px;
+
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.form-group1 {
+    
+    height: 40px;
+
+}
+
+.form-group {
+    
+    height: 50px;
+    margin-top: 60px;
+}
+
+.form-control {
+    font-size: 24px;
+    all:unset;
+    width: 495px;
+    margin-bottom: 60px;
+    padding: 10px 0;
+    border: 2px solid black;
+
+}
+
+.form-control:focus {
+   
+
+    border-color: #bdbdbd;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(212, 212, 212, 0.25);
+  }
+
+.label {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+      
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.btn{
+    
+    border-radius: 5px;
+    letter-spacing: 2px;
+    font-size: 20px;
+    background-color: rgb(198, 97, 85);
+    color: white;
+   height: 60px;
+    width: 500px;
+}
+
+.btn:hover {
+    color: #fff;
+
+    transition: 0.5s;
+    background-color: rgb(232, 77, 60);
+}
+
+
+.btn-delete:hover {
+    color: #fff;
+
+    transition: 0.5s;
+    background-color: rgb(232, 77, 60);
+}
+
+.btn-delete{
+    padding: 10px 8px;
+}
+
+
+.adminImg {
+    border: 5px solid wheat;
+    margin-top: 50px;
+    margin-right: 20px;
+    width: 200px;
+
+    border-radius: 50%;
+}
+
+.adminName{
+    width: 100%;
+    padding:0 20px;
+    color: aliceblue;
+    font-size: 30px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+}
+
+/*------Navbar-------*/
+
+.navbarStyle {
+    text-align: center;
+    width: 300px;
+    height:100%;
+
+    position: fixed;
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+
+    overflow-x: hidden; /* Disable horizontal scroll */
+    box-shadow: 0 10px 30px 10px rgba(0, 0, 0, 0.5);
+
+    background-color: #041c24;
+}
+
+.navbarImg {
+
+
+    display: block;
+    height: 270px;
+    width: 100%;
+    text-align: center;
+}
+
+.navText {
+    border: none;
+    background: none;
+    padding: 10px 20px;
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 500;
+    font-family: 'Barlow', sans-serif;
+    cursor: pointer;
+}
+
+
+
+.navPages {
+    text-align: center;
+    align-items: center;
+    padding-top: 100px;
+    height: 400px;
+    justify-content: center;
+}
+
+.pages {
+    background-color: #041c24;
+
+}
+
+.pages:hover {
+    background-color: #7f6c6c;
+}
+
+table {
+    border-collapse: collapse;
+    background: #f5f5f5;
+    
+    box-shadow: inset 0 1px 0 #fff;
+    font-size: 12px;
+    line-height: 24px;
+    margin: 30px auto;
+    text-align: left;
+    width: 1100px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  } 
+  
+  th {
+    background: #c4b59d;
+
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    box-shadow: inset 0 1px 0 #999;
+    color: #262626;
+   
+    padding: 10px 15px;
+    position: relative;
+    
+  }
+  
+
+  th:first-child {
+    border-left: 1px solid #777;  
+    box-shadow: inset 1px 1px 0 #999;
+  }
+  
+  th:last-child {
+    box-shadow: inset -1px 1px 0 #999;
+  }
+  
+  td {
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+   
+    padding: 10px 15px;
+    position: relative;
+    transition: all 300ms;
+  }
+  
+  td:first-child {
+    box-shadow: inset 1px 0 0 #fff;
+  } 
+  
+  td:last-child {
+   
+    box-shadow: inset -1px 0 0 #fff;
+  } 
+  
+  tr {
+    background: url(https://jackrugile.com/images/misc/noise-diagonal.png); 
+  }
+  
+  tr:nth-child(odd) td {
+    background: #f1f1f1 url(https://jackrugile.com/images/misc/noise-diagonal.png); 
+  }
+  
+
+  
+  tbody:hover td {
+    color: transparent;
+    text-shadow: 0 0 3px #aaa;
+  }
+  
+  tbody:hover tr:hover td {
+    color: #444;
+    text-shadow: 0 1px 0 #fff;
+  }
+
+.tableUsers{
+
+    margin-top: 80px;
+    margin-left: 450px;
+    margin-right: 200px;
+
+}
+
+.titleBlock{
+    padding-top: 50px   ;
+    width: 100%;
+}
+
+.title {
+    font-size: 40px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+
+
+}
+
+.imgStyle {
+
+
+    width: 100%;
+    height: 600px;
+   
+}
+
+.imgStyle:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+   
+}
+
+.img {
+    margin: 100px 0 100px 100px;
+    width: 300px;
+    height: 250px;
+
+    
+    text-align: center;
+    padding-top: 60px;
+
+}
+
+.imgAvatar {
+    width: 200px;
+    height: 200px;
+}
+
+
+
+.divTable {
+    margin-top: 80px;
+    
+    width: 400px;
+    height: 40px;
+    padding-left: 100px;
+}
+
+
+
+.edit {
+    margin-top: 100px;
+
+    height: 600px;
+    width: 600px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+.edit1 {
+    margin-top: 100px;
+
+    height: 450px;
+    width: 600px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+.row {
+    padding: 50px 20px;
+
+}
+
+
+.container1 {
+   
+    justify-content: center;
+    display:flex;
+  
+    width:100%
+}
+
+.form-control1 {
+    
+    all:unset;
+    width: 550px;
+    margin-bottom: 60px;
+    padding: 10px 0;
+    border: 2px solid black;
+
+}
+
+.edit2 {
+    margin-top: 100px;
+
+    height: 400px;
+    width: 1000px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+
+.form-control2 {
+    font-size: 24px;
+    all:unset;
+    width: 950px;
+    height: 200px;
+    margin-bottom: 30px;
+    padding: 10px 0;
+    border: 2px solid black;
+
+}
+
+.btn1{
+    
+    border-radius: 5px;
+    letter-spacing: 2px;
+    font-size: 16px;
+    background-color: rgb(198, 97, 85);
+    color: white;
+   height: 40px;
+    width: 150px;
+}
+
+.line {
+    margin-top: 100px;
+    width: 5px;
+    height: 350px;
+    background-color: #4b5979;
+}
+
+.patientPage {
+    margin-left: 400px;
+    max-width: 1600px;
+    display: flex;
+}
+
+.patientContainer{
+   
+
+    width: 100%;
+    
+    
+    display: flex;
+}
+
+.patient {      
+   
+    margin: 50px 0;
+    display: flex;
+    width: 800px;
+   
+    height: 300px;
+    
+    letter-spacing: 2px;
+    
+}
+
+.patientText {
+    font-size: 12px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 200;
+    
+}
+
+.patientText1{
+
+    margin: 0;
+    font-size: 30px;
+    
+}
+
+.history {
+    border: 5px #282c34 solid;
+    text-align: center;
+    background-color: #f2f2f2;
+    margin: 50px 400px;
+    width: 1200px;
+   
+}
+
+.historyTitle {
+    font-family: 'Barlow', sans-serif;
+    
+}
+
+.historyText {
+    padding:20px 100px 0 100px;
+
+    max-width: 1200px;
+}

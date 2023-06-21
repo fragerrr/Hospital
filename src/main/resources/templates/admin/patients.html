@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{../static/css/admin.css}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Profile</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="navbarStyle">
+            <div class="navbarImg">
+                <img th:src="@{../static/images/admin.jpg}" class="adminImg"/>
+            </div>
+            <span class="adminName" th:text="${admin.getName()}"></span>
+
+
+            <div class="navPages">
+                <div class="pages">
+                    <a th:href="@{'/admin'}" class="navText" >Главная</a>
+                </div>
+                <div class="pages">
+                    <a th:href="@{'/admin/patients'}" class="navText" >Пациенты</a>
+                </div>
+
+                <div class="pages">
+                    <a th:href="@{'/admin/doctors'}" class="navText" >Доктора</a>
+                </div>
+
+                <div class="pages">
+                    <form th:action="@{/logout}" th:method="POST">
+                        <button style="border: none; background: none"><a class="navText" type="submit">Выйти</a></button>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>  
+
+       <div class="tableUsers">
+        <div class="titleBlock">
+            <a class="title">Список пациентов</a>
+        </div>
+        <table>
+            <tr class="tr">
+                <th>ID</th>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Доктор</th>
+                <th>Пользовательский ID</th>
+                <th>Удалить</th>
+            </tr>
+            <th:block th:each="p : ${patients}">
+                <tr class="tr">
+
+                    <td th:text="${p.getId()}"></td>
+                    <td th:text="${p.getName()}">Peter</td>
+                    <td th:text="${p.getSurname()}">Peter</td>
+                    <td th:text="${p.getDoctor().getName()}">Griffin</td>
+                    <td th:text="${p.getUser().getId()}"></td>
+                    <td><a th:href="@{'/admin/patient/' + ${p.getId()} + '/delete'}" class="btn-delete">DELETE</a></td>
+
+
+                </tr>
+            </th:block>
+          </table>
+       </div>
+
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{../static/css/doctor.css}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<body>
+
+    <div class="container">
+
+            <div class="navbarStyle">
+                <div class="navbarImg">
+                    <img th:src="@{../static/images/doctor.jpg}"  class="adminImg"/>
+
+                </div>
+                <span class="adminName" th:text="${doctor.getName()}"></span>
+
+                    <div class="navPages">
+                        <div class="pages">
+                            <a th:href="@{'/doctor'}" class="navText" >Главная</a>
+                        </div>
+                        <div class="pages">
+                            <a th:href="@{'/doctor/list'}" class="navText" >Пациенты</a>
+                        </div>
+
+                        <div class="pages">
+                            <form th:action="@{/logout}" th:method="POST">
+                                <button style="border: none; background: none"><a class="navText" type="submit">Выйти</a></button>
+                            </form>
+                        </div>
+                    </div>
+
+
+            </div>  
+
+            <div class="patientPage">
+                <div class="patientContainer">
+                   
+        
+                    <div class="line">
+        
+                    </div>
+                    <div class="patient">
+
+                            <div class="section_1">
+                                <div class="divTable">
+                                    <p class="patientText">Имя:</p>
+                                    <p th:text="${doctor.getName()}" class="patientText1"></p>
+                                </div>
+                                <div class="divTable">
+                                    <p class="patientText">Фамилия:</p>
+                                    <p th:text="${doctor.getSurname()}" class="patientText1"></p>
+                                </div>
+                            </div>
+
+        
+                    </div>
+                </div>
+            </div>
+    
+
+           
+
+</div>
+</body>
+</html>

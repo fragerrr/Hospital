@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{../../static/css/admin.css}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Profile</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="navbarStyle">
+            <div class="navbarImg">
+                <img th:src="@{../../static/images/doctor.jpg}"  class="adminImg"/>
+            </div>
+            <span class="adminName" th:text="${doctor.getName()}"></span>
+
+
+
+            <div class="navPages">
+                <div class="pages">
+                    <a th:href="@{'/doctor'}" class="navText" >Главная</a>
+                </div>
+                <div class="pages">
+                    <a th:href="@{'/doctor/list'}" class="navText" >Пациенты</a>
+                </div>
+
+                <div class="pages">
+                    <form th:action="@{/logout}" th:method="POST">
+                        <button style="border: none; background: none"><a class="navText" type="submit">Выйти</a></button>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>  
+
+        <div class="patientPage">
+            <div class="patientContainer">
+               
+    
+                <div class="line">
+    
+                </div>
+                <div class="patient">
+                    <table>
+                        <div class="section_1">
+                            <div class="divTable">
+                                <p class="patientText">Имя:</p>
+                                <p th:text="${patient.getName()}" class="patientText1"></p>
+                            </div>
+                            <div class="divTable">
+                                <p class="patientText">Фамилия:</p>
+                                <p th:text="${patient.getSurname()}" class="patientText1"></p>
+                            </div>
+                            <div class="divTable">
+                                <p class="patientText">Возраст:</p>
+                                <p th:text="${patient.getAge()}" class="patientText1">19</p>
+                            </div>
+                        </div>
+
+                        <div class="section_2">
+                            <div class="divTable">
+                                <p class="patientText">Вес:</p>
+                                <p th:text="${patient.getWeight() + 'KG'}" class="patientText1"></p>
+                            </div>
+                            <div class="divTable">
+                                <p class="patientText">Рост:</p>
+                                <p th:text="${patient.getHeight() + 'cm'}" class="patientText1"></p>
+                            </div>
+                            <div class="divTable">
+                                <p class="patientText">Доктор:</p>
+                                <p th:text="${patient.getDoctor().getName() + ' ' + patient.getDoctor().getSurname()}" class="patientText1"></p>
+                            </div>
+                        </div>
+                    </table>
+    
+                </div>
+            </div>
+        </div>
+
+        <div class="history">
+            <div class="historyInner">
+                <h1 class="historyTitle">История болезней</h1>
+
+
+                <p class="historyText">
+                    <div th:each="sick : ${patient.getHistoryOfSick()}" style="margin-left: 10%; display: flex; font-size: 26px">
+                        <p th:text="${sick.getName() + ':'}"></p> <br/> <p style="margin-left: 1%" th:text="${sick.getDescription()}"></p>
+                    </div>
+                    <br>
+                </p>
+            </div>
+        </div>
+
+        <div class="cont">
+            <form th:action="@{'/doctor/' + ${patient.getId()} + '/add-sick'}" style="margin-left: 500px" th:method="POST" th:object="${sick}">
+                <div class="row">
+
+                    <div class="col">
+                        <div>
+                            <label>
+                                Имя:
+                            </label><br><br>
+                            <input type="text" th:field="*{name}" name="model" class="form-control" value="">
+                            <div style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+                        </div>
+
+                        <div>
+                            <label>
+                                Описание:
+                            </label><br><br>
+                            <textarea th:field="*{description}" type="text" name="model" class="form-control2" value=""/>
+                            <div style="color: red" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
+                        </div>
+
+                    </div>
+                    
+                    
+                    <div class="col">
+                        <button class="btn1">Add sick</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+
+</body>
+</html>

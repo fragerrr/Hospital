@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" th:href="@{../static/css/admin.css}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<body>
+    <div class="container">
+
+            <div class="navbarStyle">
+                <div class="navbarImg">
+                    <img th:src="@{../static/images/admin.jpg}" class="adminImg"/>
+                </div>
+                <span class="adminName" th:text="${admin.getName()}"></span>
+
+
+
+                <div class="navPages">
+                    <div class="pages">
+                        <a th:href="@{'/admin'}" class="navText" >Главная</a>
+                    </div>
+                    <div class="pages">
+                        <a th:href="@{'/admin/patients'}" class="navText" >Пациенты</a>
+                    </div>
+
+                    <div class="pages">
+                        <a th:href="@{'/admin/doctors'}" class="navText" >Доктора</a>
+                    </div>
+
+                    <div class="pages">
+                        <form th:action="@{/logout}" th:method="POST">
+                            <button style="border: none; background: none"><a class="navText" type="submit">Выйти</a></button>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>  
+
+<!-- Add forms -->
+
+            <div class="forms">
+                <form th:action="@{'/admin/new-patient'}" th:method="POST" th:object="${patient}" class="addForm1">
+                    <div class="form-group1">
+                        <label class="label">Имя</label><br>
+                        <input type="text" th:field="*{name}" name="name" class="form-control">
+                        <div style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label class="label">Фамилия</label><br>
+                        <input type="text" name="price" th:field="*{surname}" class="form-control">
+                        <div style="color: red" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Пароль(по умолчанию - "admin")</label><br>
+                        <input type="text" name="patient_pass" class="form-control">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="label">Возраст</label><br>
+                        <input type="number" th:field="*{age}" name="name" class="form-control">
+                        <div style="color: red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Вес</label><br>
+                        <input type="number" name="name" th:field="*{weight}" class="form-control">
+                        <div style="color: red" th:if="${#fields.hasErrors('weight')}" th:errors="*{weight}"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Рост</label><br>
+                        <input type="number" name="price" th:field="*{height}" class="form-control">
+                        <div style="color: red" th:if="${#fields.hasErrors('height')}" th:errors="*{height}"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">
+                            Доктор:
+                        </label><br>
+                        <select style="height: 40px; width: 495px; border: 2px solid black; font-size: 20px" th:field="*{doctor.id}">
+                            <th:block th:each="doc : ${doctors}">
+                                <option th:value="${doc.getId()}" th:text="${doc.getName() + ' ' + doc.getSurname()}"/>
+                            </th:block>
+                        </select>
+                        <div style="color: red" th:if="${#fields.hasErrors('doctor')}" th:errors="*{doctor}"></div>
+                    </div>
+    
+                    <div class="form-group">
+                        <button class="btn">Добавить пациента</button>
+                    </div>
+    
+                </form>
+
+
+
+                <form th:action="@{'/admin/new-doctor'}" th:method="POST" th:object="${doct}" class="addForm">
+                    <div class="form-group1">
+                        <label class="label">Имя</label><br>
+                        <input type="text" th:field="*{name}" name="name" class="form-control">
+                        <div style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label class="label">Фамилия</label><br>
+                        <input type="text" th:field="*{surname}" name="price" class="form-control">
+                        <div style="color: red" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label class="label">Пароль(по умолчанию - "admin")</label><br>
+                        <input type="text" name="doctor_pass" class="form-control">
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <button class="btn">Добавить доктора</button>
+                    </div>
+
+                    <br><br>
+                </form>
+            </div>
+
+</div>
+</body>
+</html>

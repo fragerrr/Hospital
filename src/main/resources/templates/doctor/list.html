@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{../static/css/doctor.css}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Profile</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="navbarStyle">
+            <div class="navbarImg">
+                <img  th:src="@{../static/images/admin.jpg}"  class="adminImg"/>
+            </div>
+            <span class="adminName" th:text="${doctor.getName()}"></span>
+
+
+
+            <div class="navPages">
+                <div class="pages">
+                    <a th:href="@{'/doctor'}" class="navText" >Главная</a>
+                </div>
+                <div class="pages">
+                    <a th:href="@{'/doctor/list'}" class="navText" >Пациенты</a>
+                </div>
+
+                <div class="pages">
+                    <form th:action="@{/logout}" th:method="POST">
+                        <button style="border: none; background: none"><a class="navText" type="submit">Выйти</a></button>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="tableUsers">
+            <div class="titleBlock">
+                <a class="title">Список пациентов</a>
+            </div>
+            <table>
+                <thead>
+                    <th>Пациент</th>
+                    <th>Доп. информация</th>
+                </thead>
+                <tbody>
+                    <th:block th:each="p : ${doctor.getPatients()}">
+                      <tr>
+
+                        <td th:text="${p.getName() + ' ' + p.getSurname()}"></td>
+                        <td><a class="btn-delete" th:href="@{'/doctor/' + ${p.getId()} + '/patient'}" style="all:unset; border: 1px solid black">Информация</a></td>
+
+                      </tr>
+
+                    </th:block>
+                 </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+</body>
+</html>

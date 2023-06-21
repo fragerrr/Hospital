@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <link rel="stylesheet" th:href="@{../static/css/main.css}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="navbarStyle">
+        
+                <a th:href="@{'/'}" class="textStyle">Source Medicine</a>
+                <div class="pages">
+                    <a th:href="@{'../static/default_pages/abous.html'}" class="pagesText" >О нас</a>
+                    <a th:href="@{'../static/default_pages/contact.html'}" class="pagesText" >Контакты</a>
+
+                    <a th:href="@{'/auth/login'}" class="pagesText" >Войти</a>
+                </div>
+           
+        </div>
+
+        
+
+    </div>
+    <div id="container1">
+
+
+        <form class="form1" >
+           
+            <div class="mainPage">
+                <h2 class="mainTitle">Медицинская клиника – №1 в городе</h2>
+            <p class="mainText">— Предоставляем качественные услуги</p>
+
+            <p class="mainText">— Лечим многочисленные заболевания</p>
+
+            <p class="mainText">— Наша клиника находится в центре города</p>
+
+            <p class="mainText">— У нас работают только квалифицированные специалисты</p>
+           
+            </div>
+         
+
+        </form>
+
+        <img />
+        <img th:src="@{../static/images/back.png}" alt="" style="position: absolute;
+        width:100%;
+        height:91vh " class="imgStyle"/>
+
+
+
+</div>
+</body>
+</html>

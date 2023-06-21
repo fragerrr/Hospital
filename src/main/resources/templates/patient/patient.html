@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{../static/css/admin.css}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Profile</title>
+</head>
+<body>
+
+        <div class="container">
+            <div class="navbarStyle">
+                <div class="navbarImg">
+                    <img th:src="@{../../static/images/capi1.png}"  class="adminImg"/>
+                </div>
+                <span class="adminName" th:text="${patient.getName()}"></span>
+
+
+
+                <div class="navPages">
+                    <div class="pages">
+                        <a th:href="@{'/home'}" class="navText" >Главная</a>
+                    </div>
+
+
+                    <div class="pages">
+                        <form th:action="@{/logout}" th:method="POST">
+                            <button style="border: none; background: none"><a class="navText" type="submit">Выйти</a></button>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+    <div class="patientPage">
+        <div class="patientContainer">
+            <div class="img"><img class="imgAvatar" th:src="@{../static/images/capi1.png}"/></div>
+
+            <div class="line">
+
+            </div>
+            <div class="patient">
+                <table>
+                    <div class="section_1">
+                        <div class="divTable">
+                            <p class="patientText">Имя:</p>
+                            <p th:text="${patient.getName()}" class="patientText1"></p>
+                        </div>
+                        <div class="divTable">
+                            <p class="patientText">Фамилия:</p>
+                            <p th:text="${patient.getSurname()}" class="patientText1"></p>
+                        </div>
+                        <div class="divTable">
+                            <p class="patientText">Возраст:</p>
+                            <p th:text="${patient.getAge()}" class="patientText1">19</p>
+                        </div>
+                    </div>
+
+                    <div class="section_2">
+                        <div class="divTable">
+                            <p class="patientText">Вес:</p>
+                            <p th:text="${patient.getWeight() + 'KG'}" class="patientText1"></p>
+                        </div>
+                        <div class="divTable">
+                            <p class="patientText">Рост:</p>
+                            <p th:text="${patient.getHeight() + 'cm'}" class="patientText1"></p>
+                        </div>
+                        <div class="divTable">
+                            <p class="patientText">Доктор:</p>
+                            <p th:text="${patient.getDoctor().getName() + ' ' + patient.getDoctor().getSurname()}" class="patientText1"></p>
+                        </div>
+                    </div>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="history">
+        <div class="historyInner">
+            <h1 class="historyTitle">История болезней</h1>
+                <div th:each="sick : ${patient.getHistoryOfSick()}" style="margin-left: 10%; display: flex; font-size: 26px">
+                    <p th:text="${sick.getName()} + ':'"></p>  <p style="margin-left: 1%" th:text="${sick.getDescription()}"></p>
+                </div>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
